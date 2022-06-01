@@ -11,7 +11,7 @@ import Foundation
 import RxSwift
 
 public extension Action {
-    func anyErrorTranslate<E: AnyErrorConvertible>(_ convertible: E.Type) -> Observable<E> {
+    func anyErrorTranslate<E: AnyErrorConvertible>(_: E.Type) -> Observable<E> {
         underlyingError.map { AnyErrorTranslator<E>.translate($0) }
     }
 }
