@@ -1,5 +1,5 @@
-import XCTest
 @testable import AnyErrorConvertible
+import XCTest
 
 final class AnyErrorConvertibleTests: XCTestCase {
     func testExampleErrorCaseA() {

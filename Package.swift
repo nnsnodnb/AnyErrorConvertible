@@ -29,13 +29,21 @@ let package = Package(
         .target(
             name: "AnyErrorConvertibleAction",
             dependencies: [
-                "RxSwift",
-                "Action",
+                .product(name: "RxSwift", package: "RxSwift"),
+                .product(name: "Action", package: "Action"),
                 "AnyErrorConvertible"
-            ]
-        ),
+            ]),
         .testTarget(
             name: "AnyErrorConvertibleTests",
-            dependencies: ["AnyErrorConvertible"]),
+            dependencies: [
+                "AnyErrorConvertible"
+            ]),
+        .testTarget(
+            name: "AnyErrorConvertibleActionTests",
+            dependencies: [
+                .product(name: "RxSwift", package: "RxSwift"),
+                .product(name: "RxTest", package: "RxSwift"),
+                "AnyErrorConvertibleAction"
+            ])
     ]
 )
