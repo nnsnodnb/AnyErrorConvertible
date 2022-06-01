@@ -1,23 +1,25 @@
 {
-  "pins" : [
-    {
-      "identity" : "action",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/RxSwiftCommunity/Action.git",
-      "state" : {
-        "revision" : "21110e93ef7b08ce9f01806827e4f381b5b09ab1",
-        "version" : "4.3.0"
+  "object": {
+    "pins": [
+      {
+        "package": "Action",
+        "repositoryURL": "https://github.com/RxSwiftCommunity/Action.git",
+        "state": {
+          "branch": null,
+          "revision": "21110e93ef7b08ce9f01806827e4f381b5b09ab1",
+          "version": "4.3.0"
+        }
+      },
+      {
+        "package": "RxSwift",
+        "repositoryURL": "https://github.com/ReactiveX/RxSwift.git",
+        "state": {
+          "branch": null,
+          "revision": "b4307ba0b6425c0ba4178e138799946c3da594f8",
+          "version": "6.5.0"
+        }
       }
-    },
-    {
-      "identity" : "rxswift",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/ReactiveX/RxSwift.git",
-      "state" : {
-        "revision" : "b4307ba0b6425c0ba4178e138799946c3da594f8",
-        "version" : "6.5.0"
-      }
-    }
-  ],
-  "version" : 2
+    ]
+  },
+  "version": 1
 }
