@@ -23,8 +23,8 @@ Pod::Spec.new do |spec|
 
   spec.subspec "Action" do |ss|
     ss.source_files = "Sources/AnyErrorConvertibleAction/*.swift"
-    ss.dependency "RxSwift"
-    ss.dependency "Action"
+    ss.dependency "RxSwift", "~> 6.5"
+    ss.dependency "Action", "~> 5.0"
     ss.dependency "AnyErrorConvertible/AnyErrorConvertible"
   end
 end
