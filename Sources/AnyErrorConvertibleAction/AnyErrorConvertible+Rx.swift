@@ -6,7 +6,9 @@
 //
 
 import Action
+#if SWIFT_PACKAGE
 import AnyErrorConvertible
+#endif
 import Foundation
 import RxSwift
 
