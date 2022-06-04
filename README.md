@@ -1,3 +1,3 @@
 # AnyErrorConvertible
 
-A description of this package.
+  Help convert Error to any type.
