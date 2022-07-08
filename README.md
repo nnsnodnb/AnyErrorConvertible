@@ -28,17 +28,39 @@ enum ConnectionError: AnyErrorConvertible {
 let error = ... // This error is `Swift.Error` type which is from URLSession, CoreData and so on.
 let connectionError = AnyErrorTranslator<ConnectionError>.translate(error)
 switch connectionError {
-    case .notFound:
-        print("Connection not found.")
-    case .internal:
-        print("Occurred internal error")
-    case .unknown:
-        print("Unknown error")
+case .notFound:
+    print("Connection not found.")
+case .internal:
+    print("Occurred internal error")
+case .unknown:
+    print("Unknown error")
 }
 ```
 
 ### [*RxSwiftCommunity/Action*](https://github.com/RxSwiftCommunity/Action) Usecase
 
+```swift
+import Action
+import AnyErrorConvertible
+#if SWIFT_PACKAGE
+import AnyErrorConvertibleAction
+#endif
+import RxSwift
+
+let action: Action<Void, Void> = .init { /* Any observable */ }
+_ = action.anyErrorTranslate<ConnectionError.self>
+    .subscribe(onNext: { connectionError in
+        switch connectionError {
+        case .notFound:
+            print("Connection not found.")
+        case .internal:
+            print("Occurred internal error")
+        case .unknown:
+            print("Unknown error")
+        }
+    })
+action.execute()
+```
 
 ## Installation
 
