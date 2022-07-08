@@ -85,6 +85,7 @@ Add the following to your `Podfile` file.
 
 ```ruby
 pod 'AnyErrorConvertible', '~> 1.0.0'
+pod 'AnyErrorConvertible/Action', '~> 1.0.0' # If using RxSwift.
 ```
 
 And please execute `pod install`.
