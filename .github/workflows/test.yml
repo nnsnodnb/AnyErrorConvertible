@@ -33,4 +33,4 @@ jobs:
         bundler-cache: true
     - name: Lint podspec
       run: |
-        bundle exec pod lib lint AnyErrorConvertible.podspec --verbose
+        bundle exec pod lib lint AnyErrorConvertible.podspec
