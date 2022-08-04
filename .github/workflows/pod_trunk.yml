@@ -22,4 +22,5 @@ jobs:
     - name: Trunk push
       env:
         COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
+      timeout-minutes: 30
       run: bundle exec pod trunk push AnyErrorConvertible.podspec

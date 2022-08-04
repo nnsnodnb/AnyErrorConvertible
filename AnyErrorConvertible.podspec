@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name                      = "AnyErrorConvertible"
-  spec.version                   = "1.0.1"
+  spec.version                   = "1.0.2"
   spec.summary                   = "Help convert Error to any type."
   spec.homepage                  = "https://github.com/nnsnodnb/AnyErrorConvertible"
   spec.swift_version             = "5.3"
