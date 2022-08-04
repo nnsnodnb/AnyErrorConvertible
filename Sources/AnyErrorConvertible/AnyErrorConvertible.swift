@@ -8,5 +8,5 @@
 import Foundation
 
 public protocol AnyErrorConvertible {
-    static func make(_ error: Error) -> Self
+    static func make(_ error: AnyError) -> Self
 }

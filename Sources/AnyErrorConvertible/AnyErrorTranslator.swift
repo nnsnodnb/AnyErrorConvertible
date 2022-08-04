@@ -8,7 +8,7 @@
 import Foundation
 
 public struct AnyErrorTranslator<E: AnyErrorConvertible> {
-    public static func translate(_ error: Error) -> E {
+    public static func translate(_ error: AnyError) -> E {
         return E.make(error)
     }
 }
