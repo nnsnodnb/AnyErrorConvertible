@@ -12,8 +12,6 @@ Pod::Spec.new do |spec|
   spec.macos.deployment_target   = "10.14"
   spec.watchos.deployment_target = "6.0"
   spec.source                    = { :git => "https://github.com/nnsnodnb/#{spec.name}.git", :tag => "#{spec.version}" }
-  spec.user_target_xcconfig      = { "EXCLUDED_ARCHS[sdk=iphonesimulator*]" => "arm64" }
-  spec.pod_target_xcconfig       = { "EXCLUDED_ARCHS[sdk=iphonesimulator*]" => "arm64" }
 
   spec.default_subspec           = "AnyErrorConvertible"
 
