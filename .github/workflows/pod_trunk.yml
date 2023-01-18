@@ -19,6 +19,9 @@ jobs:
         ruby-version: '3.0'
         bundler-cache: true
 
+    - name: Switch Xcode
+      run: sudo xcode-select -s /Applications/Xcode_13.4.1.app/Contents/Developer
+
     - name: Trunk push
       env:
         COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
