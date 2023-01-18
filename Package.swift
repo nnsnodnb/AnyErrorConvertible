@@ -7,7 +7,7 @@ let package = Package(
     name: "AnyErrorConvertible",
     platforms: [
         .macOS(.v10_14),
-        .iOS(.v9),
+        .iOS(.v11),
         .watchOS(.v6)
     ],
     products: [
