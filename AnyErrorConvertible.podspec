@@ -8,7 +8,7 @@ Pod::Spec.new do |spec|
   spec.author                    = { "nnsnodnb" => "nnsnodnb@gmail.com" }
   spec.social_media_url          = "https://twitter.com/nnsnodnb"
   spec.platform                  = :ios
-  spec.ios.deployment_target     = "9.0"
+  spec.ios.deployment_target     = "11.0"
   spec.macos.deployment_target   = "10.14"
   spec.watchos.deployment_target = "6.0"
   spec.source                    = { :git => "https://github.com/nnsnodnb/#{spec.name}.git", :tag => "#{spec.version}" }
