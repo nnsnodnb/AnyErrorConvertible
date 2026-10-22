@@ -79,17 +79,6 @@ Add the following to your `Package.swift` file dependencies:
 .package(url: "https://github.com/nnsnodnb/AnyErrorConvertible.swift", from: "1.0.0")
 ```
 
-### CocoaPods
-
-Add the following to your `Podfile` file.
-
-```ruby
-pod 'AnyErrorConvertible', '~> 1.0.0'
-pod 'AnyErrorConvertible/Action', '~> 1.0.0' # If using RxSwift.
-```
-
-And please execute `pod install`.
-
 ## License
 
 AnyErrorConvertible is released under the MIT License. See [LICENSE](LICENSE) for details.
