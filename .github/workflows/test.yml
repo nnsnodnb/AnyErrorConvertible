@@ -11,16 +11,12 @@ jobs:
     strategy:
       matrix:
         include:
-          - runner: macos-15
-            xcode: '16.2' # Swift 6.0
-          - runner: macos-15
-            xcode: '16.4' # Swift 6.1
           - runner: macos-26
             xcode: '26.3' # Swift 6.2
           - runner: macos-26
             xcode: '26.6' # Swift 6.3
           - runner: xcode-27
-            xcode: '27.1.0'
+            xcode: '27.1' # Swift 6.4
 
     runs-on: ${{ matrix.runner }}
 
