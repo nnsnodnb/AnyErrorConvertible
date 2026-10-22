@@ -1,17 +1,20 @@
 @testable import AnyErrorConvertible
-import XCTest
+import Foundation
+import Testing
 
-final class AnyErrorConvertibleTests: XCTestCase {
+struct AnyErrorConvertibleTests {
+    @Test
     func testExampleErrorCaseA() {
         let error = NSError(domain: "example error", code: 0)
 
-        XCTAssertEqual(AnyErrorTranslator<ExampleError>.translate(error), .a)
+        #expect(AnyErrorTranslator<ExampleError>.translate(error) == .a)
     }
 
+    @Test
     func testExampleErrorCaseB() {
         let error = NSError(domain: "example error", code: 999)
 
-        XCTAssertEqual(AnyErrorTranslator<ExampleError>.translate(error), .b)
+        #expect(AnyErrorTranslator<ExampleError>.translate(error) == .b)
     }
 }
 
