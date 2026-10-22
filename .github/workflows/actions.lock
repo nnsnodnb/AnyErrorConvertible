@@ -8,7 +8,6 @@ workflows:
         - 'reviewdog/action-actionlint@v1.80.6'
     '.github/workflows/test.yml':
         - 'actions/checkout@v7.0.1'
-        - 'ruby/setup-ruby@v1.333.0'
 dependencies:
     'actions/checkout@v7.0.1':
         ref: 'v7.0.1'
@@ -20,8 +19,3 @@ dependencies:
         commit: 'sha1-48e36f54d8da326b83ab061aee2cc5e01b5ca46f'
         owner_id: 48765237
         repo_id: 385059686
-    'ruby/setup-ruby@v1.333.0':
-        ref: 'v1.333.0'
-        commit: 'sha1-e1bd6146574da5e0795075b5319b300edb30c5b0'
-        owner_id: 210414
-        repo_id: 231208785

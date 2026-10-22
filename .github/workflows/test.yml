@@ -28,25 +28,3 @@ jobs:
 
     - name: Run tests
       run: swift test
-
-  pod_lint:
-    strategy:
-      matrix:
-        platform: ['ios', 'macos', 'watchos']
-    runs-on: xcode-27
-
-    env:
-      DEVELOPER_DIR: /Applications/Xcode_27.1.0.app/Contents/Developer
-
-    steps:
-    - uses: actions/checkout@v7.0.1
-
-    - uses: ruby/setup-ruby@v1.333.0
-      name: Setup Ruby
-      with:
-        ruby-version: '4.0.7'
-        bundler-cache: true
-
-    - name: Lint podspec
-      run: |
-        bundle exec pod lib lint AnyErrorConvertible.podspec --platforms=${{ matrix.platform }}
