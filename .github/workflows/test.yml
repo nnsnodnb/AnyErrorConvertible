@@ -13,10 +13,16 @@ jobs:
         include:
           - runner: macos-26
             xcode: '26.3' # Swift 6.2
+            ios_sim_dest: 'platform=iOS Simulator,OS=26.5,name=iPhone 17 Pro'
+            watch_sim_dest: 'platform=watchOS Simulator,OS=26.5,name=Apple Watch Series 11 (42mm)'
           - runner: macos-26
             xcode: '26.6' # Swift 6.3
+            ios_sim_dest: 'platform=iOS Simulator,OS=26.5,name=iPhone 17 Pro'
+            watch_sim_dest: 'platform=watchOS Simulator,OS=26.5,name=Apple Watch Series 11 (42mm)'
           - runner: xcode-27
             xcode: '27.1' # Swift 6.4
+            ios_sim_dest: 'platform=iOS Simulator,OS=27.0,name=iPhone 18 Pro'
+            watch_sim_dest: 'platform=watchOS Simulator,OS=27.0,name=Apple Watch Series 12 (42mm)'
 
     runs-on: ${{ matrix.runner }}
 
@@ -28,5 +34,27 @@ jobs:
     steps:
     - uses: actions/checkout@v7.0.1
 
-    - name: Run tests
-      run: set -o pipefail && swift test | xcbeautify --renderer github-actions
+    - name: Run tests on macOS
+      run: |
+        set -o pipefail && \
+          xcodebuild test \
+            -scheme AnyErrorConvertible-Package \
+            -destination "platform=macOS,arch=arm64" | xcbeautify --renderer github-actions
+
+    - name: Run tests on iOS Simulator
+      env:
+        DESTINATION: ${{ matrix.ios_sim_dest }}
+      run: |
+        set -o pipefail && \
+          xcodebuild test \
+            -scheme AnyErrorConvertible-Package \
+            -destination "${DESTINATION}" | xcbeautify --renderer github-actions
+
+    - name: Run tests on watchOS Simulator
+      env:
+        DESTINATION: ${{ matrix.watch_sim_dest }}
+      run: |
+        set -o pipefail && \
+          xcodebuild test \
+            -scheme AnyErrorConvertible-Package \
+            -destination "${DESTINATION}" | xcbeautify --renderer github-actions
