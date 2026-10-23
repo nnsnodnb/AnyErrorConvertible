@@ -1,0 +1,55 @@
+// swift-tools-version:6.4
+// The swift-tools-version declares the minimum version of Swift required to build this package.
+
+import PackageDescription
+
+let package = Package(
+    name: "AnyErrorConvertible",
+    platforms: [
+        .macOS(.v12),
+        .iOS(.v15),
+        .watchOS(.v9),
+    ],
+    products: [
+        .library(
+            name: "AnyErrorConvertible",
+            targets: ["AnyErrorConvertible"],
+        ),
+        .library(
+            name: "AnyErrorConvertibleAction",
+            targets: ["AnyErrorConvertibleAction"],
+        ),
+    ],
+    dependencies: [
+        .package(url: "https://github.com/ReactiveX/RxSwift.git", .upToNextMajor(from: "6.0.0")),
+        .package(url: "https://github.com/RxSwiftCommunity/Action.git", .upToNextMajor(from: "5.0.0")),
+    ],
+    targets: [
+        .target(
+            name: "AnyErrorConvertible",
+            dependencies: [],
+        ),
+        .target(
+            name: "AnyErrorConvertibleAction",
+            dependencies: [
+                .product(name: "RxSwift", package: "RxSwift"),
+                .product(name: "Action", package: "Action"),
+                "AnyErrorConvertible",
+            ],
+        ),
+        .testTarget(
+            name: "AnyErrorConvertibleTests",
+            dependencies: [
+                "AnyErrorConvertible",
+            ],
+        ),
+        .testTarget(
+            name: "AnyErrorConvertibleActionTests",
+            dependencies: [
+                .product(name: "RxSwift", package: "RxSwift"),
+                .product(name: "RxTest", package: "RxSwift"),
+                "AnyErrorConvertibleAction",
+            ],
+        ),
+    ],
+)

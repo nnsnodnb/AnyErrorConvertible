@@ -4,9 +4,11 @@ import AnyErrorConvertible
 import Foundation
 import RxSwift
 import RxTest
-import XCTest
+import Testing
 
-final class AnyErrorConvertibleActionTests: XCTestCase {
+@MainActor
+struct AnyErrorConvertibleActionTests {
+    @Test
     func testExample() {
         let error = NSError(domain: "example error", code: 0)
         let action: Action<Void, Void> = .init { return .error(error) }
@@ -18,7 +20,7 @@ final class AnyErrorConvertibleActionTests: XCTestCase {
         testScheduler.advanceTo(1)
         action.execute()
 
-        XCTAssertEqual(observer.events, [.next(1, .a)])
+        #expect(observer.events == [.next(1, .a)])
     }
 }
 
