@@ -22,7 +22,7 @@ jobs:
           - runner: xcode-27
             xcode: '27.2' # Swift 6.4
             ios_sim_dest: 'platform=iOS Simulator,OS=27.0,name=iPhone 18 Pro'
-            watch_sim_dest: 'platform=watchOS Simulator,OS=27.0,name=Apple Watch Series 12 (42mm)'
+            watch_sim_dest: 'platform=watchOS Simulator,OS=27.2,name=Apple Watch Series 12 (42mm)'
 
     runs-on: ${{ matrix.runner }}
 
